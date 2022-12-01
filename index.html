@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"> 
+    <title>Tarjeta pc</title>
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="card">
+        <figure class="product-img"><img src="./assets/img/laptop.png" alt="pc"></figure>
+        <p class="product-title">Laptop Gamer</p>
+        <form class="form">
+
+            <label for="cantidad"></label>
+            <input class="input-box" type="number" id="cantidad" name="cantidad" placeholder="Cantidad"><br><br>
+
+            <label for="color"></label>
+            <select class="input-box" id="color" onchange="
+                color = document.querySelector('#color')
+                colorEsfera = document.querySelector('#color-esfera')
+                colorEsfera.style.backgroundColor = color.value
+            ">
+                <option value="black">Negro</option>
+                <option value="blue">Azul</option>
+                <option value="green">Verde</option>
+            </select>
+
+            <p>Precio: $400.000</p>
+
+            <input type="button" class="button" value="Calcular Total" onclick="
+                cantidadLaptops = document.querySelector('#cantidad')
+                cantidadTotal = document.querySelector('#cantidadTotal')
+                montoTotal = document.querySelector('#montoTotal')
+
+                monto = 400000
+                
+                montoTotal.innerHTML = '$ ' + (monto * cantidadLaptops.value)
+                cantidadTotal.innerHTML = cantidadLaptops.value
+            ">
+
+        </form>
+    </div>
+    <div class="calculos">
+        <span>Total: <span id="montoTotal"></span></span>
+        <span>Cantidad: <span id="cantidadTotal"></span></span>
+        <span>Color: <span id="color-esfera"></span></span>
+    </div>
+
+</body>
+
+</html>
